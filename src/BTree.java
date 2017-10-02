@@ -1,8 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/******************************************************
+‘***  Project 4 - BTree Word Counter
+‘***  Gabriel Brown
+‘******************************************************
+‘*** To Demonstrate a BTree Data Structure
+‘***
+‘******************************************************
+‘*** 10/02/2017
+‘******************************************************
+‘*****************************************************/
 
 /**
  *
@@ -12,6 +17,18 @@ public class BTree {
     private BTreeNode root;
     private int totalWords;
     
+/******************************************************
+‘***  addWord(String word)
+‘***  Gabriel Brown
+‘******************************************************
+‘*** Purpose: Public exposed method to addWordRec
+‘*** Method Inputs: 
+‘***      String word
+‘*** Return value:
+‘***      void
+‘******************************************************
+‘*** 10/02/2017
+‘******************************************************/
     public void addWord(String word)
     {
         if (word.compareTo("") != 0)
@@ -25,6 +42,19 @@ public class BTree {
         }
     }
     
+/******************************************************
+‘***  addWordRec(BTreeNode current, BTreeNode temp)
+‘***  Gabriel Brown
+‘******************************************************
+‘*** Purpose: RECURSIVE to correctly place a word on the BTree
+‘*** Method Inputs: 
+‘***      BTreeNode current
+‘***      BTreeNode temp
+‘*** Return value:
+‘***      void
+‘******************************************************
+‘*** 10/02/2017
+‘******************************************************/
     private void addWordRec(BTreeNode current, BTreeNode temp)
     {
         int sort = current.getWord().compareTo(temp.getWord());
@@ -47,13 +77,37 @@ public class BTree {
                 
     }
     
+/******************************************************
+‘***  public String printWC()
+‘***  Gabriel Brown
+‘******************************************************
+‘*** Purpose: public method to call recPrint
+‘*** Method Inputs: 
+‘***      none
+‘*** Return value:
+‘***      String representation of BTree
+‘******************************************************
+‘*** 10/02/2017
+‘******************************************************/
     public String printWC()
     {   
         totalWords = 0;
         return "<html>" + recPrintWC(root);
     }
     
-    public String recPrintWC(BTreeNode current)
+/******************************************************
+‘***  recPrintWC(BTreeNode current)
+‘***  Gabriel Brown
+‘******************************************************
+‘*** Purpose: RECURSIVE to Print BTree in sorted order
+‘*** Method Inputs: 
+‘***      BTreeNode current
+‘*** Return value:
+‘***      String representation of BTree
+‘******************************************************
+‘*** 10/02/2017
+‘******************************************************/
+    private String recPrintWC(BTreeNode current)
     {
         String answer = "";
 
