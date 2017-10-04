@@ -72,7 +72,7 @@ public class BTree {
              else
                  addWordRec(current.right, temp);
          }
-         else if(sort == 0)
+         else
              current.count++;
                 
     }
@@ -121,7 +121,7 @@ public class BTree {
             
         }
         if (current == root)
-           answer += "<br><br>Total Words: " + totalWords;
+           answer += "<br><br><font color ='blue'>Total Words: " + totalWords + "</font>";
         return answer;
     }
     
